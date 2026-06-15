@@ -1,18 +1,29 @@
 package com.solaris.user.service.entity;
 
 public class User {
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
     private String repeatPassword;
 
-    public User(String firstName, String lastName, String email, String password, String repeatPassword) {
+    public User(String firstName, String lastName, String email, String password, String repeatPassword, String id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.repeatPassword = repeatPassword;
+
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {
