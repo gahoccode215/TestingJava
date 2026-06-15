@@ -4,6 +4,7 @@ import com.solaris.user.service.entity.User;
 import com.solaris.user.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class UserServiceTest {
@@ -22,5 +23,19 @@ public class UserServiceTest {
 
         //assert
         assertNotNull(user, "User object should not be null");
+    }
+
+    @Test
+    void testCreateUser_whenUserCreated_returnedUserObjectContainsSameFirstName(){
+        UserService userService = new UserServiceImpl();
+        String firstName = "Alice";
+        String lastName = "Smith";
+        String email = "alice.smith@example.com";
+        String password = "password123";
+        String repeatPassword = "password123";
+        //act
+        User user = userService.createUser(firstName, lastName, email, password, repeatPassword);
+        //assert
+        assertEquals(firstName, user.getFirstName(), "User object should contain same first name");
     }
 }
