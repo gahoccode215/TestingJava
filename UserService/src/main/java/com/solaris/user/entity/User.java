@@ -1,4 +1,4 @@
-package com.solaris.user.service.entity;
+package com.solaris.user.entity;
 
 public class User {
     private String id;

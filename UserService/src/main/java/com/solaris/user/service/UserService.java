@@ -1,6 +1,6 @@
 package com.solaris.user.service;
 
-import com.solaris.user.service.entity.User;
+import com.solaris.user.entity.User;
 
 public interface UserService {
     User createUser(
